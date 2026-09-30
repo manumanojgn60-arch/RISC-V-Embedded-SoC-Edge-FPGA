@@ -1,0 +1,23 @@
+
+### `docs/block-diagrams/block-diagram.md`
+
+```markdown
+# Block Diagram
+
+```text
+                         ┌──────────────┐
+                         │ RISC-V CPU   │
+                         └──────┬───────┘
+                                │
+                                ▼
+                         ┌──────────────┐
+                         │ SoC Bus      │
+                         └──────┬───────┘
+                                │
+       ┌─────────┬────────┬─────┼─────┬────────┬──────────┐
+       ▼         ▼        ▼     ▼     ▼        ▼          ▼
+      ROM       RAM      GPIO  UART  Timer     PWM     MAC
+                                                        │
+                                                     ┌──┴──┐
+                                                     │A×B+C│
+                                                     └─────┘

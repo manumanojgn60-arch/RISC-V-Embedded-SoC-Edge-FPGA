@@ -1,0 +1,30 @@
+
+### `docs/architecture/architecture.md`
+
+```markdown
+# System Architecture
+
+```text
+                  ┌─────────────────┐
+                  │   RISC-V CPU    │
+                  │     RV32I       │
+                  └────────┬────────┘
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │  Memory-Mapped  │
+                  │      Bus        │
+                  └────────┬────────┘
+                           │
+       ┌───────────┬───────┼───────┬───────────┐
+       │           │       │       │           │
+       ▼           ▼       ▼       ▼           ▼
+      ROM         RAM     GPIO    UART        Timer
+                                              
+                           │
+             ┌─────────────┴─────────────┐
+             │                           │
+             ▼                           ▼
+           PWM                    MAC Accelerator
+                                     │
+                                  A × B + C
